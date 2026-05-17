@@ -8,16 +8,19 @@
   @vite('resources/css/app.css')
 </head>
 <body>
+  @if (session('success'))
+    <div class="px-4 py-2 bg-green-100 text-green-500">
+      {{ session('success') }}
+    </div>
+  @endif
+
+
 
   <header>
     <nav>
       <h1>Ninja Network</h1>
-      <a href="/ninjas"> 
-        All Ninjas
-      </a>
-      <a href="/ninjas/create">
-        Create New Ninja
-      </a>
+      <a href="{{ route('ninjas.index') }}">All Ninjas</a>
+      <a href="{{ route('ninjas.create') }}">Create New Ninja</a>
     </nav>
   </header>
 
